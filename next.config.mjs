@@ -7,7 +7,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['ctynpdfxwgnbhacspgsh.supabase.co', 'thumbnail.komiku.org'],
+    domains: ['ctynpdfxwgnbhacspgsh.supabase.co', 'thumbnail.komiku.org', 'img.komiku.org'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -18,6 +18,12 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'thumbnail.komiku.org',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.komiku.org',
         port: '',
         pathname: '/**',
       },

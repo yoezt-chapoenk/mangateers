@@ -1,6 +1,10 @@
 import { getLatestUpdatedComics, getComicsByType } from '@/lib/supabase'
 import { ComicSection } from '@/components/comic-section'
 
+// Force dynamic rendering to avoid caching issues
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default async function HomePage() {
   // Fetch data for all sections
   const [latestComics, mangaComics, manhwaComics, manhuaComics] = await Promise.all([

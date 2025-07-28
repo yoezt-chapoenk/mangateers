@@ -1,5 +1,4 @@
 import { createClient } from "@supabase/supabase-js"
-import { cache } from "react"
 
 // Define types for your Supabase tables based on user's schema
 export type ComicChapter = {
@@ -69,12 +68,13 @@ const hasValidSupabaseConfig = () => {
 
 // Server-side Supabase client
 // This client is used in Server Components and Route Handlers
-export const createServerSupabaseClient = cache(() => {
+// Removed cache() to ensure fresh data fetching in production
+export const createServerSupabaseClient = () => {
   if (!hasValidSupabaseConfig()) {
     console.warn('Supabase configuration not found. Using placeholder client.')
   }
   return createClient(supabaseUrl, supabaseAnonKey)
-})
+}
 
 // Client-side Supabase client (singleton pattern)
 // This client is used in Client Components

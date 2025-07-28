@@ -6,13 +6,13 @@ function Footer() {
       <p className="mb-2">Copyright @ All right reserved.</p>
       <div className="flex justify-center flex-wrap gap-x-3 gap-y-1 text-foreground">
         <span>|</span>
-        <a href="#" className="hover:underline">DMCA</a>
+        <a href="/dmca" className="hover:underline">DMCA</a>
         <span>|</span>
-        <a href="#" className="hover:underline">Terms of Usage</a>
+        <a href="/terms" className="hover:underline">Terms of Usage</a>
         <span>|</span>
-        <a href="#" className="hover:underline">Privacy Policy</a>
+        <a href="/privacy" className="hover:underline">Privacy Policy</a>
         <span>|</span>
-        <a href="#" className="hover:underline">Contact Us</a>
+        <a href="/contact" className="hover:underline">Contact Us</a>
       </div>
     </footer>
   )

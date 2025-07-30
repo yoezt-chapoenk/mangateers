@@ -11,7 +11,8 @@ import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ 
   subsets: ["latin"],
   display: 'swap',
-  preload: true
+  preload: true,
+  variable: '--font-inter'
 })
 
 export const metadata: Metadata = {
@@ -84,11 +85,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="id">
+    <html lang="id" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="color-scheme" content="dark light" />
+        <link rel="preconnect" href="https://ctynpdfxwgnbhacspgsh.supabase.co" />
+        <link rel="preconnect" href="https://thumbnail.komiku.org" />
+        <link rel="preconnect" href="https://img.komiku.org" />
+        <link rel="dns-prefetch" href="https://ctynpdfxwgnbhacspgsh.supabase.co" />
+        <link rel="dns-prefetch" href="https://thumbnail.komiku.org" />
+        <link rel="dns-prefetch" href="https://img.komiku.org" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -98,7 +105,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${inter.variable}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

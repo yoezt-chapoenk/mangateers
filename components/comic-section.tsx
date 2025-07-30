@@ -18,8 +18,13 @@ export function ComicSection({ title, comics }: ComicSectionProps) {
         {title}
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-        {comics.map((comic) => (
-          <ComicCard key={comic.slug} comic={comic} />
+        {comics.map((comic, index) => (
+          <ComicCard 
+            key={comic.slug} 
+            comic={comic} 
+            priority={index < 6} 
+            index={index}
+          />
         ))}
       </div>
     </section>
